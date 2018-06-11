@@ -2,6 +2,14 @@ header {
   text-align: center;
 }
 
+h1 {
+  font-size: 5vmax;
+}
+
+p {
+  font-size: 2vmax;
+}
+
 .container-fluid {
-  margin-top: 3vmin;
+  padding-top: 3vmin;
 }
