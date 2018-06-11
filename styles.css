@@ -1,26 +1,32 @@
 header {
   text-align: center;
 }
-
 h1 {
   font-size: 5vmax;
 }
-
 p {
   font-size: 2vmax;
 }
-
 .container-fluid {
   padding-top: 3vmin;
 }
-
+/** Remove arrows from the number input
+* --> http://www.fix-css.com/2015/04/disable-input-number-field-arrows-from-css/
+*/
+input[type=number] {
+    -moz-appearance:textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 @media (min-width: 650px) {
   main {
       margin: 30px auto;
       width: 650px;
     }
 }
-
 @media (min-width: 850px) {
   .container-fluid {
     width: 850px;
