@@ -13,3 +13,16 @@ p {
 .container-fluid {
   padding-top: 3vmin;
 }
+
+@media (min-width: 650px) {
+  main {
+      margin: 30px auto;
+      width: 650px;
+    }
+}
+
+@media (min-width: 850px) {
+  .container-fluid {
+    width: 850px;
+  }
+}
