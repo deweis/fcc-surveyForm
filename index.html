@@ -15,7 +15,7 @@
          <p id="description">freeCodeCamp Challenge - Responsive Web Design Projects - Build a Survey Form</p>
       </header>
       <main>
-        <form id="survey-form" action="">
+        <form id="survey-form">
           <div class="form-group">
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="male">
@@ -37,7 +37,7 @@
             </div>
             <div class="form-group col-sm-3">
               <label for="number" id="number-label">Age</label>
-              <input type="number" class="form-control" id="number" placeholder="Your age" min="18" max="99">
+              <input type="number" class="form-control" id="number" placeholder="Your age" min="12" max="112">
             </div>
           </div>
           <div class="row">
@@ -120,7 +120,16 @@
           <table class="table table-striped">
             <tbody>
               <tr>
-                <th scope="row" id="resGender">Your Gender</th
+                <th scope="row">Gender</th>
+                <td id="resGender"></td>
+              </tr>
+              <tr>
+                <th scope="row">Name</th>
+                <td id="resName"></td>
+              </tr>
+              <tr>
+                <th scope="row">Age</th>
+                <td id="resAge"></td>
               </tr>
               </tbody>
           </table>
