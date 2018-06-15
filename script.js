@@ -8,11 +8,12 @@ function showInput() {
   document.getElementById('survey-form').style.display = 'none';
 
   /* Show the results */
+  const theGender = document.querySelector('input[name=inlineRadioOptions]:checked').value;
   const theName = document.getElementById('name').value;
   const theAge = document.getElementById('number').value;
 
   document.getElementById('results').style.display = 'block';
-  document.getElementById('resGender').innerText = 'your Gender';
+  document.getElementById('resGender').innerText = theGender;
   document.getElementById('resName').innerText = theName;
   document.getElementById('resAge').innerText = theAge;
 }
