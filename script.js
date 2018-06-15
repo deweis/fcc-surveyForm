@@ -11,9 +11,11 @@ function showInput() {
   const theGender = document.querySelector('input[name=inlineRadioOptions]:checked').value;
   const theName = document.getElementById('name').value;
   const theAge = document.getElementById('number').value;
+  const theEmail = document.getElementById('email').value;
 
   document.getElementById('results').style.display = 'block';
   document.getElementById('resGender').innerText = theGender;
   document.getElementById('resName').innerText = theName;
   document.getElementById('resAge').innerText = theAge;
+  document.getElementById('resEmail').innerText = theEmail;
 }
