@@ -28,4 +28,33 @@ function getAnswers() {
   document.getElementById('resAge').innerText = theAge;
   document.getElementById('resEmail').innerText = theEmail;
   document.getElementById('resPreference').innerText = thePreference;
+  getMovies();
+}
+
+const movies = [
+  { name: 'The Matrix', value: 'option1', poster: '', trailer: 'https://www.youtube.com/watch?v=vKQi3bBA1y8', free: '' },
+  { name: 'Revolver', value: 'option2', poster: '', trailer: '', free: '' },
+  { name: 'Vendetta', value: 'option3', poster: '', trailer: '', free: '' },
+  { name: 'Alphabet', value: 'option4', poster: '', trailer: '', free: '' },
+  { name: 'Earthlings', value: 'option5', poster: '', trailer: '', free: '' },
+  { name: 'Tomorrow', value: 'option6', poster: '', trailer: '', free: '' },
+  { name: 'Thrive', value: 'option7', poster: '', trailer: '', free: '' },
+  { name: 'Cowspiracy', value: 'option8', poster: '', trailer: '', free: '' },
+  { name: 'The Corporation', value: 'option9', poster: '', trailer: '', free: '' },
+  { name: 'H.O.P.E', value: 'option10', poster: '', trailer: '', free: '' },
+  { name: 'A Plastic Ocean', value: 'option11', poster: '', trailer: '', free: '' },
+  { name: 'The Choice is Ours', value: 'option12', poster: '', trailer: '', free: '' },
+];
+
+function getMovies() {
+  let arr = [];
+  const theDocs = document.querySelectorAll('input[type=checkbox]:checked');
+  console.log(theDocs);
+
+  for (let i = 0; i < theDocs.length; i++) {
+    arr.push(theDocs[i].value);
+  }
+
+  const toWatch = movies.filter(x => !(arr.includes(x.value)));
+  console.log(toWatch);
 }
