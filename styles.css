@@ -36,6 +36,12 @@ input[type=number]::-webkit-outer-spin-button {
 .results {
   display: none;
 }
+.header-watch {
+  text-align: center;
+}
+.poster {
+  max-width: 20vmin;
+}
 @media (min-width: 650px) {
   main {
       margin: 30px auto;

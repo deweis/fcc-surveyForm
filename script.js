@@ -32,29 +32,45 @@ function getAnswers() {
 }
 
 const movies = [
-  { name: 'The Matrix', value: 'option1', poster: '', trailer: 'https://www.youtube.com/watch?v=vKQi3bBA1y8', free: '' },
-  { name: 'Revolver', value: 'option2', poster: '', trailer: '', free: '' },
-  { name: 'Vendetta', value: 'option3', poster: '', trailer: '', free: '' },
-  { name: 'Alphabet', value: 'option4', poster: '', trailer: '', free: '' },
-  { name: 'Earthlings', value: 'option5', poster: '', trailer: '', free: '' },
-  { name: 'Tomorrow', value: 'option6', poster: '', trailer: '', free: '' },
-  { name: 'Thrive', value: 'option7', poster: '', trailer: '', free: '' },
-  { name: 'Cowspiracy', value: 'option8', poster: '', trailer: '', free: '' },
-  { name: 'The Corporation', value: 'option9', poster: '', trailer: '', free: '' },
-  { name: 'H.O.P.E', value: 'option10', poster: '', trailer: '', free: '' },
-  { name: 'A Plastic Ocean', value: 'option11', poster: '', trailer: '', free: '' },
-  { name: 'The Choice is Ours', value: 'option12', poster: '', trailer: '', free: '' },
+  { name: 'The Matrix', value: 'option1', poster: 'img/matrix.jpg', trailer: 'https://www.youtube.com/watch?v=vKQi3bBA1y8', free: '' },
+  { name: 'Revolver', value: 'option2', poster: 'img/revolver.jpg', trailer: '', free: '' },
+  { name: 'Vendetta', value: 'option3', poster: 'img/vendetta.jpg', trailer: '', free: '' },
+  { name: 'Alphabet', value: 'option4', poster: 'img/alphabet.jpg', trailer: '', free: '' },
+  { name: 'Earthlings', value: 'option5', poster: 'img/earthlings.jpg', trailer: '', free: '' },
+  { name: 'Tomorrow', value: 'option6', poster: 'img/tomorrow.jpg', trailer: '', free: '' },
+  { name: 'Thrive', value: 'option7', poster: 'img/thrive.jpg', trailer: '', free: '' },
+  { name: 'Cowspiracy', value: 'option8', poster: 'img/cowspiracy.jpg', trailer: '', free: '' },
+  { name: 'The Corporation', value: 'option9', poster: 'img/corporation.jpg', trailer: '', free: '' },
+  { name: 'H.O.P.E', value: 'option10', poster: 'img/hope.jpg', trailer: '', free: '' },
+  { name: 'A Plastic Ocean', value: 'option11', poster: 'img/plastic.jpg', trailer: '', free: '' },
+  { name: 'The Choice is Ours', value: 'option12', poster: 'img/choice.jpg', trailer: '', free: '' },
 ];
 
 function getMovies() {
   let arr = [];
-  const theDocs = document.querySelectorAll('input[type=checkbox]:checked');
-  console.log(theDocs);
+  const checked = document.querySelectorAll('input[type=checkbox]:checked');
 
-  for (let i = 0; i < theDocs.length; i++) {
-    arr.push(theDocs[i].value);
+  for (let i = 0; i < checked.length; i++) {
+    arr.push(checked[i].value);
   }
 
   const toWatch = movies.filter(x => !(arr.includes(x.value)));
   console.log(toWatch);
+
+  let table = document.getElementById('resultsTable'); // https://stackoverflow.com/questions/28010666/adding-row-to-a-table-with-javascript
+  let tr = document.createElement('tr');
+  tr.innerHTML = `
+    <th scope="row" colspan="2" class="header-watch">Please consider to watch the following Movies:</th>
+  `;
+  table.appendChild(tr);
+
+  for (let i = 0; i < toWatch.length; i++) {
+    console.log('adding ' + toWatch[i].name);
+    tr = document.createElement('tr');
+    tr.innerHTML = `
+      <th scope="row">${toWatch[i].name}</th>
+      <td><img class="poster img-fluid" src="${toWatch[i].poster}" alt="poster of ${toWatch[i].name}"></td>
+    `;
+    table.appendChild(tr);
+  }
 }
