@@ -36,8 +36,11 @@ input[type=number]::-webkit-outer-spin-button {
 .results {
   display: none;
 }
+.blockquote {
+  margin: 2rem 0;
+}
 .header-watch {
-  text-align: center;
+  color: #6c757d;
 }
 .poster {
   max-width: 20vmin;

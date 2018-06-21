@@ -44,6 +44,8 @@ const movies = [
   { name: 'H.O.P.E', value: 'option10', poster: 'img/hope.jpg', trailer: 'https://www.youtube.com/watch?v=wLjkbVusxGk', free: 'https://www.youtube.com/watch?v=pDg7tlEJD64' },
   { name: 'A Plastic Ocean', value: 'option11', poster: 'img/plastic.jpg', trailer: 'https://www.youtube.com/watch?v=wLjkbVusxGk', free: '' },
   { name: 'The Choice is Ours', value: 'option12', poster: 'img/choice.jpg', trailer: 'https://www.youtube.com/watch?v=RWEeNu2GC_o', free: 'https://www.youtube.com/watch?v=Yb5ivvcTvRQ' },
+  { name: 'Zeitgeist', value: 'option13', poster: 'img/zeitgeist.jpg', trailer: 'https://www.youtube.com/watch?v=Ge8HWuTjh4M', free: 'https://www.youtube.com/watch?v=OrHeg77LF4Y' },
+  { name: 'Inhabitat', value: 'option14', poster: 'img/inhabitat.jpg', trailer: 'https://vimeo.com/93538443', free: '' },
 ];
 
 function getMovies() {
@@ -58,11 +60,24 @@ function getMovies() {
   console.log(toWatch);
 
   let table = document.getElementById('resultsTable'); // https://stackoverflow.com/questions/28010666/adding-row-to-a-table-with-javascript
+
   let tr = document.createElement('tr');
   tr.innerHTML = `
-    <th scope="row" colspan="2" class="header-watch">Please consider to watch the following Movies:</th>
+    <th scope="row" colspan="3">
+      <blockquote class="blockquote text-center">
+        <p class="mb-0">"If you think we can't change the world, it just means you're not one of those that will."</p>
+        <footer class="blockquote-footer">Jacque Fresco, <cite title="Source Title"><a href="https://www.thevenusproject.com/" target="_blank">The Venus Project</a></cite></footer>
+      </blockquote>
+      <p class="header-watch">Your watchlist to start being the change:</p>
+    </th>
   `;
   table.appendChild(tr);
+
+  /*tr = document.createElement('tr');
+  tr.innerHTML = `
+    <th scope="row" colspan="3" class="header-watch">Please consider to watch the following Movies:</th>
+  `;
+  table.appendChild(tr);*/
 
   for (let i = 0; i < toWatch.length; i++) {
     const forFree = toWatch[i].free !== '' ? 'Watch for Free' : '';
