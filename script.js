@@ -11,7 +11,7 @@ function showResults() {
   /* Show the results */
   document.getElementById('results').style.display = 'block';
   document.getElementById('title').innerText = 'Your Answers';
-  document.getElementById('description').innerText = 'Thank you for submitting!';
+  document.getElementById('description').innerText = '';
 
   getAnswers();
 }
@@ -22,12 +22,15 @@ function getAnswers() {
   const theAge = document.getElementById('number').value;
   const theEmail = document.getElementById('email').value;
   const thePreference = document.getElementById('dropdown').value;
+  const theContribution = document.getElementById('yourContribution').value;
 
   document.getElementById('resGender').innerText = theGender;
   document.getElementById('resName').innerText = theName;
   document.getElementById('resAge').innerText = theAge;
   document.getElementById('resEmail').innerText = theEmail;
   document.getElementById('resPreference').innerText = thePreference;
+  document.getElementById('resContribution').innerText = theContribution;
+
   getMovies();
 }
 
@@ -112,16 +115,11 @@ function getMovies() {
         <p class="mb-0">"If you think we can't change the world, it just means you're not one of those that will."</p>
         <footer class="blockquote-footer">Jacque Fresco, <cite title="Source Title"><a href="https://www.thevenusproject.com/" target="_blank">The Venus Project</a></cite></footer>
       </blockquote>
+      <hr>
       <p class="header-watch">Your watchlist to start being the change:</p>
     </th>
   `;
   table.appendChild(tr);
-
-  /*tr = document.createElement('tr');
-  tr.innerHTML = `
-    <th scope="row" colspan="3" class="header-watch">Please consider to watch the following Movies:</th>
-  `;
-  table.appendChild(tr);*/
 
   for (let i = 0; i < toWatch.length; i++) {
     const forFree = toWatch[i].free !== '' ? 'Watch for Free' : '';
