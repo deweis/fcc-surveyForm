@@ -5,8 +5,11 @@ document.getElementById('survey-form').addEventListener('submit', function (even
 });
 
 function showResults() {
-  /* Remove the form */
+  /* Remove the form and title */
+  document.getElementById('title').style.display = 'none';
+  document.getElementById('introQuote').style.display = 'none';
   document.getElementById('survey-form').style.display = 'none';
+  scroll(0, 0);
 
   /* Show the results */
   document.getElementById('results').style.display = 'block';
@@ -62,15 +65,15 @@ const movies = [
   { name: 'The Corporation', value: '', poster: 'img/corporation.jpg',
     trailer: 'https://www.youtube.com/watch?v=exY4u0XsEGI',
     free: 'https://www.youtube.com/watch?v=KMNZXV7jOG0', },
-  { name: 'H.O.P.E', value: '', poster: 'img/hope.jpg',
-    trailer: 'https://www.youtube.com/watch?v=wLjkbVusxGk',
-    free: 'https://www.youtube.com/watch?v=pDg7tlEJD64', },
   { name: 'A Plastic Ocean', value: '', poster: 'img/plastic.jpg',
     trailer: 'https://www.youtube.com/watch?v=wLjkbVusxGk',
     free: '', },
   { name: 'The Choice is Ours', value: '', poster: 'img/choice.jpg',
     trailer: 'https://www.youtube.com/watch?v=RWEeNu2GC_o',
     free: 'https://www.youtube.com/watch?v=Yb5ivvcTvRQ', },
+  { name: 'H.O.P.E', value: '', poster: 'img/hope.jpg',
+    trailer: 'https://www.youtube.com/watch?v=wLjkbVusxGk',
+    free: 'https://www.youtube.com/watch?v=pDg7tlEJD64', },
   { name: 'Inhabitat', value: '', poster: 'img/inhabitat.jpg',
     trailer: 'https://vimeo.com/93538443',
     free: '', },
@@ -110,14 +113,14 @@ function getMovies() {
 
   let tr = document.createElement('tr');
   tr.innerHTML = `
-    <th scope="row" colspan="3">
+    <td scope="row" colspan="3">
       <blockquote class="blockquote text-center">
-        <p class="mb-0">"If you think we can't change the world, it just means you're not one of those that will."</p>
+        <p class="mb-0">"If you think we can't CHANGE the WORLD, it just means you're not one of those that will."</p>
         <footer class="blockquote-footer">Jacque Fresco, <cite title="Source Title"><a href="https://www.thevenusproject.com/" target="_blank">The Venus Project</a></cite></footer>
       </blockquote>
       <hr>
       <p class="header-watch">Your watchlist to start being the change:</p>
-    </th>
+    </td>
   `;
   table.appendChild(tr);
 
