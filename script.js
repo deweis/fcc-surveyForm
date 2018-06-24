@@ -66,7 +66,7 @@ const movies = [
     trailer: 'https://www.youtube.com/watch?v=exY4u0XsEGI',
     free: 'https://www.youtube.com/watch?v=KMNZXV7jOG0', },
   { name: 'A Plastic Ocean', value: '', poster: 'img/plastic.jpg',
-    trailer: 'https://www.youtube.com/watch?v=wLjkbVusxGk',
+    trailer: 'https://www.youtube.com/watch?v=6zrn4-FfbXw',
     free: '', },
   { name: 'The Choice is Ours', value: '', poster: 'img/choice.jpg',
     trailer: 'https://www.youtube.com/watch?v=RWEeNu2GC_o',
