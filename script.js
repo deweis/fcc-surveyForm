@@ -6,8 +6,10 @@ document.getElementById('survey-form').addEventListener('submit', function (even
 
 function showResults() {
   /* Remove the form and title */
-  document.getElementById('title').style.display = 'none';
-  document.getElementById('introQuote').style.display = 'none';
+
+  // document.getElementById('title').style.display = 'none';
+  // document.getElementById('introQuote').style.display = 'none';
+  document.getElementsByTagName('header')[0].style.display = 'none';
   document.getElementById('survey-form').style.display = 'none';
   scroll(0, 0);
 
@@ -61,7 +63,7 @@ const movies = [
     free: 'https://www.youtube.com/watch?v=lEV5AFFcZ-s', },
   { name: 'Cowspiracy', value: '', poster: 'img/cowspiracy.jpg',
     trailer: 'https://www.youtube.com/watch?v=nV04zyfLyN4',
-    free: 'http://watchdocumentaries.com/cowspiracy-the-sustainability-secret/', },
+    free: '', },
   { name: 'The Corporation', value: '', poster: 'img/corporation.jpg',
     trailer: 'https://www.youtube.com/watch?v=exY4u0XsEGI',
     free: 'https://www.youtube.com/watch?v=KMNZXV7jOG0', },

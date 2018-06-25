@@ -39,11 +39,14 @@ input[type=number]::-webkit-outer-spin-button {
 .header-watch {
   color: #6c757d;
 }
+.resultsTitle {
+  background: #fff;
+}
 .poster {
   max-width: 20vmin;
 }
 @media (min-width: 650px) {
-  main {
+  main, header {
       margin: 30px auto;
       width: 600px;
   }
