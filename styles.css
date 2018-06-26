@@ -10,6 +10,9 @@ h1 {
   padding-bottom: 2vmin;
   padding-top: 2vmin;
 }
+label {
+  font-weight: 600;
+}
 /** Remove arrows from the number input
 * --> http://www.fix-css.com/2015/04/disable-input-number-field-arrows-from-css/
 */
