@@ -1,14 +1,13 @@
-/*jshint esversion: 6 */
+/* jshint esversion: 6 */
+
 document.getElementById('survey-form').addEventListener('submit', function (event) {
   event.preventDefault();   // Thank you https://stackoverflow.com/questions/21338476/addeventlistener-on-form-submit
   showResults();
 });
 
 function showResults() {
-  /* Remove the form and title */
 
-  // document.getElementById('title').style.display = 'none';
-  // document.getElementById('introQuote').style.display = 'none';
+  /* Remove the form and title */
   document.getElementsByTagName('header')[0].style.display = 'none';
   document.getElementById('survey-form').style.display = 'none';
   scroll(0, 0);
@@ -100,7 +99,7 @@ const movies = [
   }
 })();
 
-/* Get the movies not watched yet */
+/* Get the movies not watched yet and add them to the page */
 function getMovies() {
   let arr = [];
   const checked = document.querySelectorAll('input[type=checkbox]:checked');
@@ -173,45 +172,4 @@ function getMovies() {
       btnsFree[i].setAttribute('class', 'hidden');
     }
   }
-
-  /*tr = document.createElement('tr');
-    tr.innerHTML = `
-      <th scope="row" colspan="3">${toWatch[i].name}
-        <br>
-        <img class="poster img-fluid" src="${toWatch[i].poster}" alt="poster of ${toWatch[i].name}">
-      </th>
-      <td>
-        <a href="${toWatch[i].trailer}" target="_blank" class="btn-sm btn-success" role="button">Trailer</a><br><br>
-        <a href="${toWatch[i].free}" target="_blank" class="btn-sm btn-success" role="button">${forFree}</a>
-      </td>
-    `;
-    table.appendChild(tr);*/
-
-  /*for (let i = 0; i < toWatch.length; i++) {
-    const forFree = toWatch[i].free !== '' ? 'Watch for Free' : '';
-
-    let sectionMovies = document.getElementById('results');
-
-    let divMain = document.createElement('div');
-    divMain.setAttribute('class', 'row');
-    divMain.innerHTML = `
-      <div class="col">${toWatch[i].name}
-        <div class="row">
-          <div class="col">
-            <img class="poster img-fluid" src="${toWatch[i].poster}" alt="poster of ${toWatch[i].name}">
-          </div>
-          <div class="col">
-            <a href="${toWatch[i].trailer}" target="_blank" class="btn-sm btn-success" role="button">
-              Trailer
-            </a>
-            <br><br>
-            <a href="${toWatch[i].free}" target="_blank" class="btn-sm btn-success" role="button">
-              ${forFree}
-            </a>
-          </div>
-        </div>
-      </div>
-    `;
-    sectionMovies.appendChild(divMain);
-  }*/
 }
