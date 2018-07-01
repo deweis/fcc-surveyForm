@@ -42,13 +42,13 @@ function getAnswers() {
 const movies = [
   { name: 'The Matrix', value: '', poster: 'img/matrix.jpg',
     trailer: 'https://www.imdb.com/title/tt0133093/videoplayer/vi1032782617?ref_=tt_ov_vi',
-    free: '', },
+    free: 'notAvailable', },
   { name: 'Revolver', value: '', poster: 'img/revolver.jpg',
     trailer: 'https://www.imdb.com/title/tt0365686/videoplayer/vi1621033241?ref_=tt_ov_vi',
-    free: '', },
+    free: 'notAvailable', },
   { name: 'V for Vendetta', value: '', poster: 'img/vendetta.jpg',
     trailer: 'https://www.imdb.com/title/tt0434409/videoplayer/vi4276093209?ref_=tt_ov_vi',
-    free: '', },
+    free: 'notAvailable', },
   { name: 'Zeitgeist', value: '', poster: 'img/zeitgeist.jpg',
     trailer: 'https://www.youtube.com/watch?v=Ge8HWuTjh4M',
     free: 'https://www.youtube.com/watch?v=OrHeg77LF4Y', },
@@ -57,19 +57,19 @@ const movies = [
     free: 'https://www.youtube.com/watch?v=CTw2cQbAwSo', },
   { name: 'Tomorrow', value: '', poster: 'img/tomorrow.jpg',
     trailer: 'https://www.youtube.com/watch?v=0SI-Kyam_Jk',
-    free: '', },
+    free: 'notAvailable', },
   { name: 'Thrive', value: '', poster: 'img/thrive.jpg',
     trailer: 'https://www.youtube.com/watch?v=OibqdwHyZxk',
     free: 'https://www.youtube.com/watch?v=lEV5AFFcZ-s', },
   { name: 'Cowspiracy', value: '', poster: 'img/cowspiracy.jpg',
     trailer: 'https://www.youtube.com/watch?v=nV04zyfLyN4',
-    free: '', },
+    free: 'notAvailable', },
   { name: 'The Corporation', value: '', poster: 'img/corporation.jpg',
     trailer: 'https://www.youtube.com/watch?v=exY4u0XsEGI',
     free: 'https://www.youtube.com/watch?v=KMNZXV7jOG0', },
   { name: 'A Plastic Ocean', value: '', poster: 'img/plastic.jpg',
     trailer: 'https://www.youtube.com/watch?v=6zrn4-FfbXw',
-    free: '', },
+    free: 'notAvailable', },
   { name: 'The Choice is Ours', value: '', poster: 'img/choice.jpg',
     trailer: 'https://www.youtube.com/watch?v=RWEeNu2GC_o',
     free: 'https://www.youtube.com/watch?v=Yb5ivvcTvRQ', },
@@ -78,7 +78,7 @@ const movies = [
     free: 'https://www.youtube.com/watch?v=pDg7tlEJD64', },
   { name: 'Inhabitat', value: '', poster: 'img/inhabitat.jpg',
     trailer: 'https://vimeo.com/93538443',
-    free: '', },
+    free: 'notAvailable', },
   { name: 'Earthlings', value: '', poster: 'img/earthlings.jpg',
     trailer: 'https://www.youtube.com/watch?v=Hm7Babs_FJU',
     free: 'https://vimeo.com/209647801', },
@@ -126,9 +126,55 @@ function getMovies() {
   `;
   table.appendChild(tr);
 
+  let moviesContainer = document.getElementById('moviesContainer');
+
   for (let i = 0; i < toWatch.length; i++) {
-    const forFree = toWatch[i].free !== '' ? 'Watch for Free' : '';
-    /*tr = document.createElement('tr');
+    let divGrid = document.createElement('div');
+    divGrid.setAttribute('class', 'grid-container');
+
+    divGrid.innerHTML = `
+      <div class="name">${toWatch[i].name}</div>
+      <div class="cover">
+        <img class="poster"
+             src="${toWatch[i].poster}"
+             alt="Poster of the movie toWatch[i].name">
+      </div>
+      <div class="links">
+        <a href="${toWatch[i].trailer}"
+           target="_blank"
+           class="btn-sm btn-primary"
+           role="button">Trailer
+        </a>
+        <br><br>
+        <a href="${toWatch[i].free}"
+           target="_blank"
+           class="btn-sm btn-success free-watch"
+           role="button">Watch for free
+        </a>
+      </div>
+    `;
+
+    moviesContainer.appendChild(divGrid);
+  };
+
+  /* get elements with no free link and remove the respective link*/
+  let btnsFree = document.getElementsByClassName('free-watch');
+
+  for (let i = 0; i < btnsFree.length; i++) {
+    if (/notAvailable/.test(btnsFree[i].href)) {
+      btnsFree[i].setAttribute('class', 'hidden');
+    }
+  }
+
+  /* Need to run a second time as one free without link is not captured
+     in the first run above ????? No clue why this happens...*/
+  for (let i = 0; i < btnsFree.length; i++) {
+    if (/notAvailable/.test(btnsFree[i].href)) {
+      btnsFree[i].setAttribute('class', 'hidden');
+    }
+  }
+
+  /*tr = document.createElement('tr');
     tr.innerHTML = `
       <th scope="row" colspan="3">${toWatch[i].name}
         <br>
@@ -140,6 +186,10 @@ function getMovies() {
       </td>
     `;
     table.appendChild(tr);*/
+
+  /*for (let i = 0; i < toWatch.length; i++) {
+    const forFree = toWatch[i].free !== '' ? 'Watch for Free' : '';
+
     let sectionMovies = document.getElementById('results');
 
     let divMain = document.createElement('div');
@@ -163,5 +213,5 @@ function getMovies() {
       </div>
     `;
     sectionMovies.appendChild(divMain);
-  }
+  }*/
 }
