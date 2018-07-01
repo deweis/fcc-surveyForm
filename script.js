@@ -128,17 +128,40 @@ function getMovies() {
 
   for (let i = 0; i < toWatch.length; i++) {
     const forFree = toWatch[i].free !== '' ? 'Watch for Free' : '';
-    tr = document.createElement('tr');
+    /*tr = document.createElement('tr');
     tr.innerHTML = `
-      <th scope="row">${toWatch[i].name}</th>
-      <td>
+      <th scope="row" colspan="3">${toWatch[i].name}
+        <br>
         <img class="poster img-fluid" src="${toWatch[i].poster}" alt="poster of ${toWatch[i].name}">
-      </td>
+      </th>
       <td>
-        <a href="${toWatch[i].trailer}" target="_blank">Trailer</a><br>
-        <a href="${toWatch[i].free}" target="_blank">${forFree}</a>
+        <a href="${toWatch[i].trailer}" target="_blank" class="btn-sm btn-success" role="button">Trailer</a><br><br>
+        <a href="${toWatch[i].free}" target="_blank" class="btn-sm btn-success" role="button">${forFree}</a>
       </td>
     `;
-    table.appendChild(tr);
+    table.appendChild(tr);*/
+    let sectionMovies = document.getElementById('results');
+
+    let divMain = document.createElement('div');
+    divMain.setAttribute('class', 'row');
+    divMain.innerHTML = `
+      <div class="col">${toWatch[i].name}
+        <div class="row">
+          <div class="col">
+            <img class="poster img-fluid" src="${toWatch[i].poster}" alt="poster of ${toWatch[i].name}">
+          </div>
+          <div class="col">
+            <a href="${toWatch[i].trailer}" target="_blank" class="btn-sm btn-success" role="button">
+              Trailer
+            </a>
+            <br><br>
+            <a href="${toWatch[i].free}" target="_blank" class="btn-sm btn-success" role="button">
+              ${forFree}
+            </a>
+          </div>
+        </div>
+      </div>
+    `;
+    sectionMovies.appendChild(divMain);
   }
 }
