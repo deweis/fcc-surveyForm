@@ -48,7 +48,7 @@ const movies = [
     trailer: 'https://www.imdb.com/title/tt0365686/videoplayer/vi1621033241?ref_=tt_ov_vi',
     free: 'notAvailable', },
   { name: 'V for Vendetta', value: '',
-    poster: 'http://res.cloudinary.com/dxx26hhtx/image/upload/v1530436813/movie-posters/vendetta.jpg',
+    poster: 'https://res.cloudinary.com/dxx26hhtx/image/upload/v1530436813/movie-posters/vendetta.jpg',
     trailer: 'https://www.imdb.com/title/tt0434409/videoplayer/vi4276093209?ref_=tt_ov_vi',
     free: 'notAvailable', },
   { name: 'Zeitgeist', value: '',
